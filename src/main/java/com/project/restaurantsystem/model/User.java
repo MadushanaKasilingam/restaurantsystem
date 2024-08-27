@@ -26,6 +26,12 @@ public class User {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
+    private USER_ROLE role=USER_ROLE.ROLE_CUSTOMER;
+
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Address> address = new ArrayList<>();
+
 
 }
 
